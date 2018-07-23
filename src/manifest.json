@@ -1,6 +1,7 @@
 {
 	"short_name": "React App",
-	"name": "SRK suspender",
+	"name": "Tab Suspender",
+	"version": "1.0",
 	"author": "Srikanth Reddy Kandula",
 	"manifest_version": 2,
 	"permissions": [
@@ -12,18 +13,6 @@
 		"http://*/*",
     	"https://*/*"
 	],
-	"browser_action": {
-		"default_icon" : {
-			"16" : "./assets/pause-16.png",
-			"19" : "./assets/pause-24.png",
-			"32" : "./assets/pause-32.png",
-			"64" : "./assets/pause-64.png",
-			"128": "./assets/pause-128.png"
-		},
-		"default_popup": "popup.html",
-		"default_title": "TAB suspender"
-	},
-	"version": "1.0",
 	"icons": {
 		"16" : "./assets/pause-16.png",
 		"24" : "./assets/pause-24.png",
@@ -38,13 +27,26 @@
 	},
 	"content_security_policy" : "script-src 'self'; object-src 'self'",
 
-	"options_page": "options.html",
+	"browser_action": {
+		"default_icon" : {
+			"16" : "./assets/pause-16.png",
+			"19" : "./assets/pause-24.png",
+			"32" : "./assets/pause-32.png",
+			"64" : "./assets/pause-64.png",
+			"128": "./assets/pause-128.png"
+		},
+		"default_popup": "popup.html",
+		"default_title": "TAB suspender"
+	},
+	"options_page": "settings.html",
 	"background" : {
         "scripts": ["background.bundle.js"],
         "persistent": true
     },
 	"content_scripts": [{
+		"run_at": "document_end",
 		"matches": ["http://*/*", "https://*/*"],
-		"js": ["suspended.bundle.js"]
-	}]
+		"js": ["tabMonitor.bundle.js"]
+	}],
+	"web_accessible_resources": []
 }

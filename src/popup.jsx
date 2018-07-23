@@ -10,6 +10,9 @@ browser.storage.local.get("suspendedTabs", (items)=>{
     browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         let tabId = tabs[0].id;
         let isTabSuspended = suspendedTabs[tabId] ? true : false;
-        ReactDOM.render(<PopupComponent isTabSuspended={isTabSuspended} activeTab={tabs[0]}/>, document.getElementById('popup-root'));
+        ReactDOM.render(
+            <PopupComponent isTabSuspended={isTabSuspended} currentTab={tabs[0]}/>,
+            document.getElementById('popup-root')
+        );
     });
 });

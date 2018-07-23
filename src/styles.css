@@ -1,34 +1,35 @@
+@import '~antd/dist/antd.css';
+
+* {
+  box-sizing: border-box
+} 
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+}
+
 .popup {
-  width: 180px;
+  width: 200px;
   height: auto;
 }
 
-.popup-option {
-  width: flex;
-  color: #4CAF50;
-  border-color: transparent;
-  display: block;
-}
-
 .button {
-  cursor: pointer;
   width: 100%;
-  color: black;
+  display: block;
   border-color: transparent;
-  background-color: white;
-  border-style: solid;
   text-align: left;
-  padding: 4px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-.popup-option:hover {
-  background-color: rgb(214, 214, 214);
-}
-
-.popup-option:hover button{
-  background-color: rgb(214, 214, 214);
+.button:hover {
+  border-color: transparent;
 }
 
 
